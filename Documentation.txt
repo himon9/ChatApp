@@ -24,3 +24,7 @@ some more cmds for pm2 : for details of pm2 sites: pm2 list
 for this project, the public ipv4 address is not showing on laptop due to securtiy issues, but working fine on mobile browser
 
 LIVE IP OF CHATAPP : 52.66.244.228
+
+In socket of client/src/components/Chat/Chat.js, ENDPOINT should contain the live link of the deployed server. 
+for local machine, the server is hosted on localhost:5001, so ENDPOINT is localhost:5001
+but in case of aws instance, the live server link is 52.66.244.228, so ENDPOINT is 52.66.244.228

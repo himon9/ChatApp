@@ -1,0 +1,6 @@
+inside the server dir , run : pm2 start index.js
+To stop pm2 : "pm2 stop appname" or "pm2 kill"
+Here we are starting both server and client from index.js of server , cmd : "npm start"
+
+access aws ec2 by:
+ssh -i "ChatAppSSH.pem" ubuntu@ec2-52-66-244-228.ap-south-1.compute.amazonaws.com

@@ -1,0 +1,26 @@
+For creating instance aws instance follow youtube : https://www.youtube.com/watch?v=vmty50KJg08 (Koding 101)
+
+While creating SSH key value pair, make sure to chmod permissions (refer to SSH connections in instance creation in aws)
+
+clone the git repo to the remote aws ec2 instance
+in the instance, there is apps folder under which all webapps are stored
+
+make sure to npm install in both client and server
+every time there is a change in clinet, make sure to npm run build in client
+
+for old react make sure to inclue legacy command in package.json. refer to package.json of client
+
+we are starting the client from server only by sending a response with the index.html under the clinet/build folder
+so we dont need to separately npm start for client and server
+Here we only npm start in server.
+
+in the aws instsance, our app is live while npm start is executed in server.
+but it collapses as soon as we log out of instance.
+so we use pm2 to always run the server.
+use command: pm2 run index.js --name chatapp (in server folder)
+some more cmds for pm2 : for details of pm2 sites: pm2 list 
+                         to delete pm2 site: pm2 delete 0(this deletes all sites)
+
+for this project, the public ipv4 address is not showing on laptop due to securtiy issues, but working fine on mobile browser
+
+LIVE IP OF CHATAPP : 52.66.244.228

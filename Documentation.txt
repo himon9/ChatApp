@@ -26,6 +26,7 @@ for this project, the public ipv4 address is not showing on laptop due to securt
 We are serving this with NGINX server. The default port of nginx is 80
 Public ipv4 of app : 52.66.244.228
 Live Site Link : 52.66.244.228:80
+Public DNS : http://ec2-52-66-244-228.ap-south-1.compute.amazonaws.com:80   
 
 In socket of client/src/components/Chat/Chat.js, ENDPOINT should contain the live link of the deployed server. 
 for local machine, the server is hosted on localhost:5001, so ENDPOINT is localhost:5001

@@ -9,6 +9,7 @@ make sure to npm install in both client and server
 every time there is a change in clinet, make sure to npm run build in client
 
 for old react make sure to inclue legacy command in package.json. refer to package.json of client
+USE react-scripts build --openssl-legacy-provider instead of react-scripts --openssl-legacy-provider build 
 
 we are starting the client from server only by sending a response with the index.html under the clinet/build folder
 so we dont need to separately npm start for client and server
@@ -24,9 +25,9 @@ some more cmds for pm2 : for details of pm2 sites: pm2 list
 for this project, the public ipv4 address is not showing on laptop due to securtiy issues, but working fine on mobile browser
 
 We are serving this with NGINX server. The default port of nginx is 80
-Public ipv4 of app : 52.66.244.228
-Live Site Link : 52.66.244.228:80
-Public DNS : http://ec2-52-66-244-228.ap-south-1.compute.amazonaws.com:80   
+Public ipv4 of app : 13.126.75.106
+Live Site Link : 13.126.75.106:80
+Public DNS : ec2-13-126-75-106.ap-south-1.compute.amazonaws.com:80 
 
 In socket of client/src/components/Chat/Chat.js, ENDPOINT should contain the live link of the deployed server. 
 for local machine, the server is hosted on localhost:5001, so ENDPOINT is localhost:5001

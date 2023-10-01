@@ -1,3 +1,28 @@
+1. For a dynamic application, there is always two parts : client and server
+2. In the client side, link the port where the server is running say localhost:8000
+3. Create a build of client
+4. Serve with pm2 : pm2 serve build 3000 --spa --name client (where 3000 is the port where we want to run client)
+5. Navigate to server folder and run : pm2 start index.js --name server
+6. Thus the two parts are running separately and the server is connected to the clinet
+7. In the default file, located at ./etc/nginx/sites-available, change the nginx config and add the following lines to bypass the http traffic to our client side
+
+    server_name _;
+
+	location / {
+		proxy_pass http://localhost:3000; // client port
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection 'upgrade';
+		proxy_set_header Host $host;
+		proxy_cache_bypass $http_upgrade;
+	}
+
+8. After any changes, always restart nginx server by : sudo service nginx restart
+9. If we stop our ec2 instance, then we need to again run pm2 commands
+10. Our site is live on public ipv4 provided by aws ec2 instance 
+
+
+
 inside the server dir , run : pm2 start index.js
 To stop pm2 : "pm2 stop appname" or "pm2 kill"
 Here we are starting both server and client from index.js of server , cmd : "npm start"
